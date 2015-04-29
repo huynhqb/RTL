@@ -12,14 +12,15 @@ module async_fifo_ctlr #(
   (
   input  wire                     i_wclk, 
   input  wire                     i_wrst_n,
-  output wire [PTR_WIDTH-2:0]     o_wptr, 
   input  wire                     i_push, 
-  input  wire [DATA_WIDTH-1:0]    i_wdata, 
+  output wire [PTR_WIDTH-2:0]     o_wptr, 
+  output wire                     o_wren, 
+  // input  wire [DATA_WIDTH-1:0]    i_wdata, 
   input  wire                     i_rclk, 
   input  wire                     i_rrst_n, 
   output wire                     i_pop, 
   output wire [PTR_WIDTH-2:0]     o_rptr,
-  input  wire [DATA_WIDTH-1:0]    o_rdat,
+  output wire                     o_rden,
   output reg                      o_almost_full,
   output reg                      o_almost_empty
 
